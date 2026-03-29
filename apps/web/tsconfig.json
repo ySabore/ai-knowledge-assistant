@@ -1,1 +1,21 @@
-gementContent":{"engagementType":"Click","engagementSurface":"ZI","dataSource":"TrendingSearch","suggestionType":"TrendingSearch","zeroInputExperienceType":"DSB","zeroInputItemType":"Other"}}},{"Title":"cleveland guardians","HandOffType":0,"QSCode":"SHTRND","instrumentedItem":{"_kValue":90084,"_qsCode":"TrendingSearch","_handOffType":0,"_workflow":5,"_properties":{"DataType":"BingData","form":"SHTRND","cardType":"Mega"},"_userEngagementContent":{"engagementType":"Click","engagementSurface":"ZI","dataSource":"TrendingSearch","suggestionType":"TrendingSearch","zeroInputExperienceType":"DSB","zeroInputItemType":"Other"}}},
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

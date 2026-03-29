@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sqlite3
+import uuid
 from contextlib import contextmanager
 from typing import Any, Generator
 
@@ -95,3 +96,46 @@ def list_documents_for_workspace(workspace_id: str) -> list[dict[str, Any]]:
             (workspace_id,),
         )
         return fetchall_dicts(cur)
+
+
+def user_id_by_auth_subject(auth_subject: str) -> str | None:
+    with get_connection() as conn:
+        row = conn.execute(
+            "SELECT user_id FROM users WHERE auth_subject = ? LIMIT 1",
+            (auth_subject,),
+        ).fetchone()
+        if not row:
+            return None
+        return str(row["user_id"])
+
+
+def ensure_user_for_auth_subject(
+    auth_subject: str,
+    email: str | None = None,
+    display_name: str | None = None,
+) -> str:
+    existing = user_id_by_auth_subject(auth_subject)
+    if existing:
+        return existing
+
+    user_id = f"clerk:{uuid.uuid4().hex}"
+    final_email = email or f"{auth_subject}@clerk.local"
+    final_name = display_name or auth_subject
+
+    with get_connection() as conn:
+        conn.execute(
+            """
+            INSERT INTO users (
+                user_id, email, display_name, auth_provider, auth_subject, status
+            ) VALUES (?, ?, ?, 'clerk', ?, 'active')
+            """,
+            (
+                user_id,
+                final_email,
+                final_name,
+                auth_subject,
+            ),
+        )
+        conn.commit()
+
+    return user_id
