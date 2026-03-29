@@ -1,0 +1,40 @@
+AI Knowledge Assistant — recovery build (2026-03)
+
+What happened
+- Many source files on the USB copy were corrupted (null bytes, wrong binary payloads).
+- Your SQLite registry at app.db is intact (organizations, workspaces, users, documents, etc.).
+
+What was restored
+- backend/ai_knowledge_assistant: FastAPI app (health, /me/*, workspaces documents/chat/ingest stubs).
+- apps/web: minimal Vite + React + Tailwind UI (status page hitting the API via /api proxy).
+
+Run API (macOS / Linux)
+  cd backend
+  python3 -m venv ../.venv-macos
+  source ../.venv-macos/bin/activate   # Windows: ..\\.venv-macos\\Scripts\\activate
+  pip install -r ../requirements-backend.txt
+  export REGISTRY_DATABASE_PATH="$(cd .. && pwd)/app.db"   # optional if cwd is project root
+  export DEV_BEARER_USER_ID=user-alpha                    # user resolved when using bearer token
+  uvicorn ai_knowledge_assistant.main:app --reload --host 127.0.0.1 --port 8000
+
+Or pin the user without a token (local only):
+  export DEV_USER_ID=user-alpha
+
+Run web (needs Node 18+)
+  cd apps/web
+  cp .env.example .env
+  npm install
+  npm run dev
+  Open http://127.0.0.1:5173
+
+Production note
+- Replace dev bearer auth with Clerk/JWT (see clerk_auth.py placeholder).
+- Re-implement RAG: vectorstore.py, retrieval.py, ingestion_worker.py, chat.py reply.
+
+Tests
+  pip install pytest httpx
+  REGISTRY_DATABASE_PATH=.../app.db DEV_USER_ID=user-alpha pytest tests/smoke_test.py -q
+
+Text encoding
+- `.editorconfig` at repo root sets UTF-8 and LF for editors that support it.
+- Normalize text files: `python3 scripts/normalize-text-encoding.py` (optional `--dry-run`).

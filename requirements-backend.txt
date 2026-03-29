@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+langchain
+langchain-openai
+langchain-anthropic
+langchain-ollama
+pinecone
+pypdf
+python-docx
+beautifulsoup4
+requests
+tiktoken
+python-multipart
+httpx
+pyjwt>=2.8.0
+cryptography>=42.0.0

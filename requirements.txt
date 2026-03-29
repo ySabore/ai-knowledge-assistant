@@ -1,0 +1,3 @@
+# Full Python stack: FastAPI backend + legacy Streamlit. For tests, use requirements-dev.txt instead.
+-r requirements-backend.txt
+-r requirements-streamlit.txt

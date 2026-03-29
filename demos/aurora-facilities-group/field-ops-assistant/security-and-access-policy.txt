@@ -1,0 +1,24 @@
+0\r�m��=�+j
+https://apps.microsoft.com/assets/js/css-function-DmSxojfK.jsimport{g as i,b as n}from"./if-defined-QQ5jrQ9m.js";function o(r,e=""){const t=`filter: ${r}; transform: ${e} translate3d(0, 0, 0);`;return i(t)}function $(r,e,t,a,l){let s=`calc((${r} - ${e} * (${t} - 1)) / ${t})`;return a&&(s=`max(${s}, ${a})`),i(s)}function c(){return n`:dir(rtl) &`}export{o as f,$ as r,c as s};
+�A
+�Eo��:D��
+
+GET�	�"
+
+accept-rangesbytes"2
+
+cache-control!public,max-age=31536000,immutable"
+content-length317"�
+content-security-policy�default-src 'self' data:;script-src 'self' https://*.clarity.ms https://c.bing.com wcpstatic.microsoft.com js.monitor.azure.com www.microsoft.com get.microsoft.com xvsec.video.microsoft.com bat.bing.com 'unsafe-inline';style-src * 'unsafe-inline';connect-src * data: ms-windows-store:;font-src *;img-src * data: blob:;media-src 'self' blob: https://sfds-production.azurefd.net https://canvasstorageprodtorus.blob.core.windows.net https://cdn-dynmedia-1.microsoft.com https://malibussl-s.akamaihd.net;frame-src * ms-windows-store:;report-uri https://csp.microsoft.com/report/app-store-web-prod"
+
+content-typetext/javascript"%
+date
+Fri, 27 Mar 2026 15:34:41 GMT"
+etag"1dcbd5f75319b3d"".
+
+last-modified
+Thu, 26 Mar 2026 20:31:00 GMT"
+ms-cvyu1sBsEf+0KIxUs4.0"
+permissions-policy	unload=()"P
+
+x-azure-refA20260327T153441Z-r1f8f7cb

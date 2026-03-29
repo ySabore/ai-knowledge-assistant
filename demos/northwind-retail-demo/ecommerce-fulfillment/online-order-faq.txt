@@ -1,0 +1,13 @@
+Northwind Retail — Online Order FAQ
+
+Order changes
+- Address changes allowed only before fulfillment starts; contact support within 1 hour of order placement when possible.
+
+Cancellations
+- Full cancellation with refund if no items have shipped; partial cancellations may adjust promotions.
+
+Damaged or missing items
+- Report within 48 hours of delivery with photos; replacement or refund per policy.
+
+BOPIS (buy online, pickup in store)
+- Ready notifications via SMS/email; bring ID and order number.

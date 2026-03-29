@@ -1,0 +1,5 @@
+# Python deps for the legacy Streamlit UI under apps/streamlit/.
+# The React app uses apps/web/package.json, not this file.
+streamlit
+python-dotenv
+requests

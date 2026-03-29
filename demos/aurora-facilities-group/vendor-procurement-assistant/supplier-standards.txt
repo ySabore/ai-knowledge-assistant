@@ -1,0 +1,20 @@
+security-policy�default-src 'self' data:;script-src 'self' https://*.clarity.ms https://c.bing.com wcpstatic.microsoft.com js.monitor.azure.com www.microsoft.com get.microsoft.com xvsec.video.microsoft.com bat.bing.com 'unsafe-inline';style-src * 'unsafe-inline';connect-src * data: ms-windows-store:;font-src *;img-src * data: blob:;media-src 'self' blob: https://sfds-production.azurefd.net https://canvasstorageprodtorus.blob.core.windows.net https://cdn-dynmedia-1.microsoft.com https://malibussl-s.akamaihd.net;frame-src * ms-windows-store:;report-uri https://csp.microsoft.com/report/app-store-web-prod"
+
+content-typetext/javascript"%
+date
+Fri, 27 Mar 2026 15:34:42 GMT"
+etagW/"1dcbd5f7531951f"".
+
+last-modified
+Thu, 26 Mar 2026 20:31:00 GMT"
+ms-cvSBRsSowK30WL9Jg/.0"
+permissions-policy	unload=()"@
+strict-transport-security#max-age=31536000; includeSubDomains"
+varyAccept-Encoding"P
+
+x-azure-refA20260327T153442Z-r1f8f7cb664w62ddhC1BL1sdxn0000000ey000000000b7tp"
+x-cacheTCP_HIT"!
+x-content-type-optionsnosniff"!
+x-fd-int-roxy-purgeid66820371"
+
+x-powered-byASP.NET0��
