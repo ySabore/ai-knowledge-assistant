@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Knowledge Assistant — Product Roadmap 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080C14;--bg-s:#0F1623;--bg-e:#162033;--bg-card:#111827;
+  --accent:#2563EB;--accent2:#3B82F6;--gold:#F59E0B;
+  --t1:#F0F4FF;--t2:#94A3B8;--t3:#4A5568;
+  --bd:rgba(255,255,255,0.08);--bda:rgba(37,99,235,0.35);
+  --green:#10B981;--green-bg:rgba(16,185,129,0.1);--green-bd:rgba(16,185,129,0.3);
+  --amber:#F59E0B;--amber-bg:rgba(245,158,11,0.1);--amber-bd:rgba(245,158,11,0.3);
+  --blue:#3B82F6;--blue-bg:rgba(59,130,246,0.1);--blue-bd:rgba(59,130,246,0.35);
+  --red:#EF4444;--red-bg:rgba(239,68,68,0.1);--red-bd:rgba(239,68,68,0.3);
+  --serif:'Fraunces',Georgia,serif;--sans:'DM Sans',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t1);font-family:var(--sans);font-size:15px;line-height:1.6;min-height:100vh}
+
+/* HEADER */
+header{padding:48px 5% 36px;border-bottom:1px solid var(--bd);position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:-40%;right:-10%;width:600px;height:600px;background:radial-gradient(ellipse,rgba(37,99,235,0.1) 0%,transparent 65%);pointer-events:none}
+header::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.header-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.header-left{}
+.logo-row{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.logo-icon{width:36px;height:36px;background:var(--accent);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-icon svg{width:20px;height:20px;fill:white}
+.logo-name{font-size:15px;font-weight:600;color:var(--t1)}
+h1{font-family:var(--serif);font-size:clamp(32px,4vw,48px);font-weight:400;line-height:1.1;margin-bottom:10px}
+.header-sub{font-size:15px;color:var(--t2);max-width:520px;line-height:1.65}
+.header-right{display:flex;flex-direction:column;gap:10px;align-items:flex-end;padding-top:8px}
+.header-meta{text-align:right;font-size:13px;color:var(--t3)}
+.header-meta strong{color:var(--t2);font-weight:500}
+.print-btn{background:var(--accent);border:none;color:white;padding:9px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);display:flex;align-items:center;gap:7px;transition:background .2s}
+.print-btn:hover{background:#1d4fd8}
+.print-btn svg{width:14px;height:14px;fill:white}
+
+/* PHASE LEGEND */
+.legend-bar{max-width:1280px;margin:0 auto;padding:20px 5%;display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-bottom:1px solid var(--bd)}
+.leg{display:flex;align-items:center;gap:8px;font-size:13px}
+.leg-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;border:1px solid}
+.leg-p1{background:var(--green-bg);border-color:var(--green-bd);color:var(--green)}
+.leg-p2{background:var(--amber-bg);border-color:var(--amber-bd);color:var(--amber)}
+.leg-p3{background:var(--blue-bg);border-color:var(--blue-bd);color:var(--blue)}
+.leg-p4{background:var(--red-bg);border-color:var(--red-bd);color:var(--red)}
+.leg-desc{color:var(--t3);font-size:12px}
+.legend-bar .spacer{flex:1}
+.effort-legend{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t3)}
+.effort-dots-sm{display:flex;gap:2px}
+.dot-sm{width:6px;height:6px;border-radius:50%;background:var(--bd)}
+.dot-sm.f{background:var(--blue)}
+
+/* MAIN GRID */
+main{max-width:1280px;margin:0 auto;padding:32px 5% 60px}
+.phase-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:start}
+
+/* PHASE COLUMN */
+.phase-col{}
+.phase-header{border-radius:10px;padding:14px 16px;margin-bottom:12px;border:1px solid}
+.phase-header.p1{background:var(--green-bg);border-color:var(--green-bd)}
+.phase-header.p2{background:var(--amber-bg);border-color:var(--amber-bd)}
+.phase-header.p3{background:var(--blue-bg);border-color:var(--blue-bd)}
+.phase-header.p4{background:var(--red-bg);border-color:var(--red-bd)}
+.ph-num{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:2px}
+.ph-num.p1{color:var(--green)}.ph-num.p2{color:var(--amber)}.ph-num.p3{color:var(--blue)}.ph-num.p4{color:var(--red)}
+.ph-title{font-size:16px;font-weight:600;margin-bottom:2px}
+.ph-title.p1{color:var(--green)}.ph-title.p2{color:var(--amber)}.ph-title.p3{color:var(--blue)}.ph-title.p4{color:var(--red)}
+.ph-period{font-size:11px;opacity:.6}
+.ph-period.p1{color:var(--green)}.ph-period.p2{color:var(--amber)}.ph-period.p3{color:var(--blue)}.ph-period.p4{color:var(--red)}
+
+/* MILESTONE */
+.milestone{display:flex;align-items:center;gap:8px;background:var(--bg-s);border:1px solid var(--bd);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--t2);margin-bottom:10px}
+.ms-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* FEATURE CARD */
+.fcard{background:var(--bg-card);border:1px solid var(--bd);border-radius:10px;margin-bottom:8px;overflow:hidden;transition:border-color .15s;cursor:pointer}
+.fcard:hover{border-color:rgba(255,255,255,0.16)}
+.fcard.open{border-color:var(--bda)}
+.fcard-top{padding:12px 14px}
+.fcard-row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:5px}
+.fcard-name{font-size:13px;font-weight:600;color:var(--t1);line-height:1.3;flex:1}
+.tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:100px;white-space:nowrap;border:1px solid}
+.tag.p1{background:var(--green-bg);border-color:var(--green-bd);color:var(--green)}
+.tag.p2{background:var(--amber-bg);border-color:var(--amber-bd);color:var(--amber)}
+.tag.p3{background:var(--blue-bg);border-color:var(--blue-bd);color:var(--blue)}
+.tag.p4{background:var(--red-bg);border-color:var(--red-bd);color:var(--red)}
+.fcard-desc{font-size:12px;color:var(--t2);line-height:1.5;margin-bottom:8px}
+.effort-row{display:flex;align-items:center;gap:6px}
+.effort-lbl{font-size:11px;color:var(--t3)}
+.effort-dots{display:flex;gap:3px}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.1)}
+.dot.on{background:var(--blue)}
+.chevron{margin-left:auto;font-size:10px;color:var(--t3);transition:transform .2s;padding-left:8px}
+.fcard.open .chevron{transform:rotate(180deg)}
+
+/* DETAIL PANEL */
+.fcard-detail{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.fcard.open .fcard-detail{max-height:400px}
+.fcard-detail-inner{padding:0 14px 14px;border-top:1px solid var(--bd);padding-top:12px}
+.detail-section{margin-bottom:12px}
+.detail-section:last-child{margin-bottom:0}
+.detail-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:6px}
+.detail-text{font-size:12px;color:var(--t2);line-height:1.6}
+.detail-items{display:flex;flex-direction:column;gap:4px}
+.detail-item{font-size:12px;color:var(--t2);display:flex;align-items:flex-start;gap:6px;line-height:1.5}
+.detail-item::before{content:'→';color:var(--accent2);flex-shrink:0;margin-top:1px;font-size:11px}
+
+/* TIMELINE BAR */
+.timeline{max-width:1280px;margin:0 auto;padding:0 5% 48px}
+.timeline h2{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:20px;color:var(--t1)}
+.tl-track{position:relative;padding-bottom:40px}
+.tl-line{position:absolute;top:16px;left:0;right:0;height:2px;background:var(--bd)}
+.tl-fill{position:absolute;top:16px;left:0;width:25%;height:2px;background:var(--accent);transition:width 1s ease}
+.tl-quarters{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.tl-q{text-align:center;position:relative}
+.tl-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--bg);margin:9px auto 10px;position:relative;z-index:1}
+.tl-q-label{font-size:12px;font-weight:600;color:var(--t2)}
+.tl-q-sub{font-size:11px;color:var(--t3);margin-top:2px}
+.tl-milestone{font-size:11px;color:var(--t3);margin-top:6px;padding:0 4px;line-height:1.4}
+
+/* STACK SECTION */
+.tech-section{max-width:1280px;margin:0 auto;padding:0 5% 60px}
+.tech-section h2{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:20px;color:var(--t1)}
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tech-card{background:var(--bg-s);border:1px solid var(--bd);border-radius:10px;padding:16px}
+.tech-card h3{font-size:13px;font-weight:600;color:var(--t1);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
+.tech-item{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.tech-item:last-child{border-bottom:none}
+.tech-name{font-size:12px;color:var(--t2)}
+.tech-val{font-size:11px;font-family:var(--mono);color:var(--accent2);background:rgba(37,99,235,0.1);padding:2px 7px;border-radius:4px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--bd);padding:20px 5%;max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--t3);flex-wrap:wrap;gap:8px}
+
+/* PRINT */
+@media print{
+  body{background:#fff;color:#111}
+  header::before,header::after{display:none}
+  .print-btn{display:none}
+  .fcard-detail{max-height:none!important}
+  .fcard.open .fcard-detail,.fcard-detail{max-height:none!important;overflow:visible!important}
+  :root{--bg:#fff;--bg-s:#f8f9fb;--bg-card:#fff;--t1:#111;--t2:#444;--t3:#888;--bd:rgba(0,0,0,0.1);--bda:rgba(37,99,235,0.3)}
+  .phase-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:900px){
+  .phase-grid,.tech-grid{grid-template-columns:1fr 1fr}
+  .tl-quarters{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .phase-grid,.tech-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="logo-row">
+        <div class="logo-icon">
+          <svg viewBox="0 0 20 20"><path d="M10 1L2 5.5v9L10 19l8-4.5v-9L10 1zm0 2.4L16.2 7 10 10.6 3.8 7 10 3.4zm-6.8 4.2L9 10.9v6.2L3.2 13.5V7.6zm7.8 9.5v-6.2l5.8-3.3v5.9l-5.8 3.6z"/></svg>
+        </div>
+        <span class="logo-name">AI Knowledge Assistant</span>
+      </div>
+      <h1>Product Roadmap<br>2025 — 12-Month Plan</h1>
+      <p class="header-sub">From MVP to enterprise-ready platform. Four phases, 20 features, one north star: cited, auditable answers that enterprise teams trust.</p>
+    </div>
+    <div class="header-right">
+      <div class="header-meta">
+        <strong>Version 1.0</strong><br>
+        Last updated: March 2025<br>
+        Horizon: Q1 – Q4 2025
+      </div>
+      <button class="print-btn" onclick="window.print()">
+        <svg viewBox="0 0 16 16"><path d="M4 1h8v3H4V1zM1 5h14v7h-3v3H4v-3H1V5zm3 5v4h8v-4H4zm9-3a1 1 0 100 2 1 1 0 000-2z"/></svg>
+        Save as PDF
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- LEGEND -->
+<div class="legend-bar">
+  <div class="leg"><span class="leg-pill leg-p1">Phase 1</span><span class="leg-desc">Foundation — MVP &amp; private beta</span></div>
+  <div class="leg"><span class="leg-pill leg-p2">Phase 2</span><span class="leg-desc">Connectors — first paid teams</span></div>
+  <div class="leg"><span class="leg-pill leg-p3">Phase 3</span><span class="leg-desc">Enterprise — close first large deal</span></div>
+  <div class="leg"><span class="leg-pill leg-p4">Phase 4</span><span class="leg-desc">Moat — Series A readiness</span></div>
+  <div class="spacer"></div>
+  <div class="effort-legend">Effort: <div class="effort-dots-sm"><div class="dot-sm f"></div><div class="dot-sm f"></div><div class="dot-sm f"></div><div class="dot-sm"></div><div class="dot-sm"></div></div> = medium (1–5 scale)</div>
+</div>
+
+<!-- MAIN FEATURE GRID -->
+<main>
+  <div class="phase-grid">
+
+    <!-- PHASE 1 -->
+    <div class="phase-col">
+      <div class="phase-header p1">
+        <div class="ph-num p1">Phase 1 · Q1</div>
+        <div class="ph-title p1">Foundation</div>
+        <div class="ph-period p1">Months 1–3</div>
+      </div>
+      <div class="milestone"><div class="ms-dot" style="background:var(--green)"></div>Milestone: MVP live — internal beta</div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Auth &amp; user management</span><span class="tag p1">Core</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">SSO, org model, role definitions</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Auth layer with SSO, org/workspace model, and role definitions via Clerk.dev or Auth0.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Users sign in via GitHub/Google. Admins invite teammates and assign roles.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Clerk.dev integration with GitHub + Google OAuth</div>
+            <div class="detail-item">Org model: admin, editor, viewer roles</div>
+            <div class="detail-item">Workspace isolation per org in database</div>
+            <div class="detail-item">Audit-ready user events log</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Document ingestion pipeline</span><span class="tag p1">Core</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Upload, chunk, embed, vector store</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Chunking, embedding, and vector storage for uploaded files. Support PDF, DOCX, MD, TXT.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Users upload docs and query them via chat with inline source citations.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">LangChain or LlamaIndex for chunking pipeline</div>
+            <div class="detail-item">512-token chunks, 10% overlap strategy</div>
+            <div class="detail-item">pgvector or Pinecone for embedding storage</div>
+            <div class="detail-item">Re-index trigger on document update</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Cited answer engine</span><span class="tag p1">Core</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">RAG + citation pills + confidence score</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">RAG pipeline returning answers with source passage, document name, and page reference. Confidence scoring per response.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Every answer shows its source. Users can click any citation to view the original passage.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Claude claude-sonnet-4-20250514 via Anthropic API with streaming</div>
+            <div class="detail-item">top-k=5 retrieval with MMR reranking</div>
+            <div class="detail-item">Prompt template enforcing citation format</div>
+            <div class="detail-item">Confidence heuristic from retrieval score</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Chat UI</span><span class="tag p1">Core</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Query input, streaming, source panel</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Conversational interface with query input, streamed answer display, citation pills, and source panel.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Clean, fast chat that streams responses and highlights source passages on citation click.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Next.js + React with Vercel AI SDK streaming</div>
+            <div class="detail-item">Citation pill components with click-to-source</div>
+            <div class="detail-item">Collapsible source side-panel</div>
+            <div class="detail-item">Mobile-responsive layout</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Landing page &amp; waitlist</span><span class="tag p1">Core</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Redesigned marketing site + CTA</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Redesigned dark-theme marketing page with demo CTA, waitlist capture, and basic analytics.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Drives signups for private beta. Measures conversion rate from visitor to waitlist.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Next.js static export, deployed to Vercel</div>
+            <div class="detail-item">Waitlist form connected to Airtable or Loops</div>
+            <div class="detail-item">Plausible or PostHog analytics</div>
+            <div class="detail-item">A/B test hero headline copy</div>
+          </div></div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="phase-col">
+      <div class="phase-header p2">
+        <div class="ph-num p2">Phase 2 · Q2</div>
+        <div class="ph-title p2">Connectors</div>
+        <div class="ph-period p2">Months 4–6</div>
+      </div>
+      <div class="milestone"><div class="ms-dot" style="background:var(--amber)"></div>Milestone: First paid teams onboarded</div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Confluence connector</span><span class="tag p2">Growth</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">OAuth sync, permission-aware crawl</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">OAuth-based sync of Confluence spaces. Crawl pages, index content, respect Confluence permissions.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Teams using Confluence as their wiki can query it directly without manual uploads.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Confluence REST API + OAuth 2.0 flow</div>
+            <div class="detail-item">Page-level permission sync into ACL store</div>
+            <div class="detail-item">Incremental sync via page update webhooks</div>
+            <div class="detail-item">Space-level scoping per workspace</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Google Drive connector</span><span class="tag p2">Growth</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Docs, Sheets summaries, Drive files</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Sync Google Docs, Sheets summaries, and Drive files via Google Workspace OAuth.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Indexes all shared Drive content the user has access to, respecting Drive sharing permissions.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Google Drive API v3 + service account OAuth</div>
+            <div class="detail-item">Google Docs → Markdown conversion</div>
+            <div class="detail-item">Watch API for incremental updates</div>
+            <div class="detail-item">Shared drive and My Drive support</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Notion connector</span><span class="tag p2">Growth</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Pages, databases, block-level sync</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Sync Notion workspace pages and databases via Notion API with OAuth.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Notion-heavy teams can query their entire wiki without leaving the AI assistant.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Notion API + OAuth integration</div>
+            <div class="detail-item">Database row and page block sync</div>
+            <div class="detail-item">Block-level chunking strategy</div>
+            <div class="detail-item">Incremental sync via updated_time cursor</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">GitHub connector</span><span class="tag p2">Growth</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">READMEs, docs, code comments</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Index READMEs, markdown docs, and code comments from connected repos.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Engineering teams can query codebase docs and ADRs without switching tools.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">GitHub REST + GraphQL API with OAuth</div>
+            <div class="detail-item">Index .md, .rst, inline code comments</div>
+            <div class="detail-item">Branch awareness — main/trunk only default</div>
+            <div class="detail-item">Webhook on push for incremental updates</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Connector admin UI</span><span class="tag p2">Growth</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Connect, monitor, resync sources</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Dashboard for admins to connect, disconnect, and monitor data sources with sync status.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Admins have full visibility into what data is connected and when it was last synced.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Per-connector status cards (last sync, doc count)</div>
+            <div class="detail-item">Manual re-sync trigger per connector</div>
+            <div class="detail-item">Error alerting on failed sync runs</div>
+            <div class="detail-item">Connector enable/disable per workspace</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Billing &amp; subscriptions</span><span class="tag p2">Growth</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Stripe, seat management, metering</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Stripe integration for Team and Enterprise plans. Usage metering, seat management, upgrade/downgrade flows.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Product generates revenue. Teams can self-serve upgrade without involving sales.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Stripe Billing + Customer Portal integration</div>
+            <div class="detail-item">Seat-based pricing model with overage</div>
+            <div class="detail-item">Usage metering for API calls and queries</div>
+            <div class="detail-item">Webhook handling for payment lifecycle events</div>
+          </div></div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="phase-col">
+      <div class="phase-header p3">
+        <div class="ph-num p3">Phase 3 · Q3</div>
+        <div class="ph-title p3">Enterprise</div>
+        <div class="ph-period p3">Months 7–9</div>
+      </div>
+      <div class="milestone"><div class="ms-dot" style="background:var(--blue)"></div>Milestone: First enterprise contract signed</div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">SSO &amp; SAML 2.0</span><span class="tag p3">Scale</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Okta, Azure AD, Google Workspace</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Enterprise SSO via SAML 2.0 and OIDC. Support Okta, Azure AD, Google Workspace as identity providers.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Enterprise IT can provision users via their existing IdP. No separate credential management.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">SAML 2.0 + OIDC library integration</div>
+            <div class="detail-item">Okta, Azure AD, Google Workspace tested</div>
+            <div class="detail-item">JIT provisioning on first login</div>
+            <div class="detail-item">SCIM provisioning for automated deprovisioning</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">RBAC &amp; permission sync</span><span class="tag p3">Scale</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Per-doc ACLs, query-time filtering</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Role-based access control engine that mirrors document permissions from source systems. Users only see answers sourced from docs they can access.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Sarah in Eng sees Eng docs. Mike in Sales sees only Sales docs. Zero cross-team data leaks.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Permission propagation engine per connector</div>
+            <div class="detail-item">Per-document ACL storage in Postgres</div>
+            <div class="detail-item">Query-time permission filtering in retrieval step</div>
+            <div class="detail-item">Admin override capability with audit trail</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Audit logging</span><span class="tag p3">Scale</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Immutable query + access trail</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Immutable log of all queries, document accesses, admin actions, and connector events. Exportable to SIEM.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Compliance teams can review who asked what, when, and what source it cited.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Append-only audit table in Postgres</div>
+            <div class="detail-item">Structured JSON log format with full context</div>
+            <div class="detail-item">Export to Splunk, Datadog, or S3</div>
+            <div class="detail-item">Configurable retention policy per org</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Jira &amp; Zendesk connectors</span><span class="tag p3">Scale</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Issues, tickets, resolution history</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Sync Jira issues and Zendesk tickets into the knowledge index. Enables ops and support teams to query incident history.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Support teams can ask "how was this type of issue resolved before?" and get cited answers from closed tickets.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Jira REST API + webhook for issue updates</div>
+            <div class="detail-item">Zendesk API with ticket + comment indexing</div>
+            <div class="detail-item">Status and label metadata for filtering</div>
+            <div class="detail-item">Resolution note extraction and weighting</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Admin analytics dashboard</span><span class="tag p3">Scale</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Usage, unanswered queries, ROI metrics</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Usage metrics for org admins: top queries, unanswered questions, most-cited docs, active users, ROI metrics.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Admins can prove value to executives. Unanswered query view surfaces content gaps.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">PostHog or internal Postgres + chart components</div>
+            <div class="detail-item">Top-10 unanswered questions view</div>
+            <div class="detail-item">Per-connector utilization stats</div>
+            <div class="detail-item">Weekly digest email to org admins</div>
+          </div></div>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="phase-col">
+      <div class="phase-header p4">
+        <div class="ph-num p4">Phase 4 · Q4</div>
+        <div class="ph-title p4">Moat</div>
+        <div class="ph-period p4">Months 10–12</div>
+      </div>
+      <div class="milestone"><div class="ms-dot" style="background:var(--red)"></div>Milestone: Series A readiness</div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Slack bot integration</span><span class="tag p4">Moat</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">/ask in channels, cited threaded replies</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Answer questions directly in Slack channels and DMs. /ask command or @mention triggers. Responses include citations in thread.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Teams get answers without leaving Slack. Massively increases DAU and stickiness.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Slack Bolt SDK, slash command + event subscriptions</div>
+            <div class="detail-item">Thread-aware multi-turn context handling</div>
+            <div class="detail-item">Admin controls per Slack channel</div>
+            <div class="detail-item">Rate limiting and abuse prevention</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">VPC / on-premise deploy</span><span class="tag p4">Moat</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Docker + Helm chart, air-gap mode</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Packaged deployment option for customers who cannot use SaaS. Docker Compose and Helm chart for Kubernetes.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Unlocks regulated industries: finance, healthcare, government. Required for largest deals.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Docker Compose + Helm chart packaging</div>
+            <div class="detail-item">Swap cloud vector DB for self-hosted Qdrant</div>
+            <div class="detail-item">Swap managed DB for customer Postgres</div>
+            <div class="detail-item">Air-gap mode (no outbound except LLM API)</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Fine-tuned retrieval model</span><span class="tag p4">Moat</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Per-customer reranker, feedback loop</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Train a custom reranker on customer query-answer feedback to improve retrieval relevance over time. The core compounding moat.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Retrieval quality improves the longer a customer uses the product. Creates real switching cost.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Collect implicit feedback (thumbs, dwell, follow-ups)</div>
+            <div class="detail-item">Fine-tune BGE or Cohere cross-encoder reranker</div>
+            <div class="detail-item">A/B test reranker vs base retrieval per org</div>
+            <div class="detail-item">Customer-specific model versioning + rollback</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">Public API &amp; webhooks</span><span class="tag p4">Moat</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Embed answer engine in any workflow</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Public REST API so enterprise customers can embed the answer engine in their own products and workflows.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Unlocks integration revenue. Customers build the product into internal portals and tools.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">OpenAPI 3.0 spec + interactive docs</div>
+            <div class="detail-item">API key management with scoping per resource</div>
+            <div class="detail-item">Rate limiting per key with burst allowance</div>
+            <div class="detail-item">Webhook events: answer.created, sync.complete</div>
+          </div></div>
+        </div></div>
+      </div>
+
+      <div class="fcard" onclick="toggle(this)">
+        <div class="fcard-top">
+          <div class="fcard-row"><span class="fcard-name">SOC 2 Type II</span><span class="tag p4">Moat</span><span class="chevron">▼</span></div>
+          <div class="fcard-desc">Compliance audit, enterprise gate</div>
+          <div class="effort-row"><span class="effort-lbl">Effort</span><div class="effort-dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+        </div>
+        <div class="fcard-detail"><div class="fcard-detail-inner">
+          <div class="detail-section"><div class="detail-label">What we're building</div><div class="detail-text">Complete the audit process for SOC 2 Type II. Required to close enterprise deals above $50K ACV.</div></div>
+          <div class="detail-section"><div class="detail-label">Definition of done</div><div class="detail-text">Enterprise procurement gates open. Legal review cycles shorten significantly.</div></div>
+          <div class="detail-section"><div class="detail-label">Key tasks</div><div class="detail-items">
+            <div class="detail-item">Vanta or Drata for compliance automation</div>
+            <div class="detail-item">Begin 3-month observation window in Q4 start</div>
+            <div class="detail-item">Penetration test + remediation sprint</div>
+            <div class="detail-item">Security questionnaire library for sales team</div>
+          </div></div>
+        </div></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <h2>Delivery timeline</h2>
+  <div class="tl-track">
+    <div class="tl-line"></div>
+    <div class="tl-fill" id="tl-fill"></div>
+    <div class="tl-quarters">
+      <div class="tl-q">
+        <div class="tl-dot" style="background:var(--green);border-color:var(--bg)"></div>
+        <div class="tl-q-label" style="color:var(--green)">Q1 · Foundation</div>
+        <div class="tl-q-sub">Jan – Mar 2025</div>
+        <div class="tl-milestone">MVP live<br>Internal beta launch<br>5 core features shipped</div>
+      </div>
+      <div class="tl-q">
+        <div class="tl-dot" style="background:var(--amber);border-color:var(--bg)"></div>
+        <div class="tl-q-label" style="color:var(--amber)">Q2 · Connectors</div>
+        <div class="tl-q-sub">Apr – Jun 2025</div>
+        <div class="tl-milestone">First paying teams<br>4 connectors live<br>Billing active</div>
+      </div>
+      <div class="tl-q">
+        <div class="tl-dot" style="background:var(--blue);border-color:var(--bg)"></div>
+        <div class="tl-q-label" style="color:var(--blue)">Q3 · Enterprise</div>
+        <div class="tl-q-sub">Jul – Sep 2025</div>
+        <div class="tl-milestone">First enterprise deal<br>SSO + RBAC + Audit<br>Admin analytics</div>
+      </div>
+      <div class="tl-q">
+        <div class="tl-dot" style="background:var(--red);border-color:var(--bg)"></div>
+        <div class="tl-q-label" style="color:var(--red)">Q4 · Moat</div>
+        <div class="tl-q-sub">Oct – Dec 2025</div>
+        <div class="tl-milestone">Series A readiness<br>Slack bot + API<br>SOC 2 observation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech-section">
+  <h2>Recommended tech stack</h2>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <h3>Frontend</h3>
+      <div class="tech-item"><span class="tech-name">Framework</span><span class="tech-val">Next.js 14</span></div>
+      <div class="tech-item"><span class="tech-name">UI library</span><span class="tech-val">React + Tailwind</span></div>
+      <div class="tech-item"><span class="tech-name">Streaming</span><span class="tech-val">Vercel AI SDK</span></div>
+      <div class="tech-item"><span class="tech-name">Auth UI</span><span class="tech-val">Clerk.dev</span></div>
+      <div class="tech-item"><span class="tech-name">Deploy</span><span class="tech-val">Vercel</span></div>
+    </div>
+    <div class="tech-card">
+      <h3>Backend & AI</h3>
+      <div class="tech-item"><span class="tech-name">API layer</span><span class="tech-val">Node.js / tRPC</span></div>
+      <div class="tech-item"><span class="tech-name">LLM</span><span class="tech-val">Claude Sonnet</span></div>
+      <div class="tech-item"><span class="tech-name">RAG framework</span><span class="tech-val">LlamaIndex</span></div>
+      <div class="tech-item"><span class="tech-name">Reranker</span><span class="tech-val">Cohere Rerank</span></div>
+      <div class="tech-item"><span class="tech-name">Background jobs</span><span class="tech-val">BullMQ</span></div>
+    </div>
+    <div class="tech-card">
+      <h3>Data & Infrastructure</h3>
+      <div class="tech-item"><span class="tech-name">Database</span><span class="tech-val">Postgres (Supabase)</span></div>
+      <div class="tech-item"><span class="tech-name">Vector store</span><span class="tech-val">pgvector / Pinecone</span></div>
+      <div class="tech-item"><span class="tech-name">Object storage</span><span class="tech-val">S3 / R2</span></div>
+      <div class="tech-item"><span class="tech-name">Billing</span><span class="tech-val">Stripe</span></div>
+      <div class="tech-item"><span class="tech-name">Observability</span><span class="tech-val">Datadog / PostHog</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>AI Knowledge Assistant · Product Roadmap 2025 · Confidential</span>
+  <span>20 features · 4 phases · 12 months</span>
+</footer>
+
+<script>
+function toggle(card) {
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.fcard.open').forEach(c => c.classList.remove('open'));
+  if (!isOpen) card.classList.add('open');
+}
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const fill = document.getElementById('tl-fill');
+    if (fill) fill.style.width = '25%';
+  }, 300);
+});
+</script>
+</body>
+</html>
