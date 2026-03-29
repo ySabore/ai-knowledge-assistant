@@ -30,6 +30,45 @@ def dev_user_id() -> str | None:
     return v or None
 
 
+def auth_mode() -> str:
+    """Authentication mode: `dev` (default) or `clerk`."""
+    return os.environ.get("AUTH_MODE", "dev").strip().lower()
+
+
+def clerk_domain() -> str | None:
+    """Clerk frontend API domain, e.g. `your-app.clerk.accounts.dev`."""
+    v = os.environ.get("CLERK_DOMAIN", "").strip()
+    return v or None
+
+
+def clerk_issuer() -> str | None:
+    """JWT issuer URL; if unset, derived from CLERK_DOMAIN when available."""
+    v = os.environ.get("CLERK_ISSUER", "").strip()
+    if v:
+        return v.rstrip("/")
+    domain = clerk_domain()
+    if domain:
+        return f"https://{domain}"
+    return None
+
+
+def clerk_jwks_url() -> str | None:
+    """JWKS endpoint for Clerk signature verification."""
+    v = os.environ.get("CLERK_JWKS_URL", "").strip()
+    if v:
+        return v
+    issuer = clerk_issuer()
+    if issuer:
+        return f"{issuer}/.well-known/jwks.json"
+    return None
+
+
+def clerk_audience() -> str | None:
+    """Optional audience expected in Clerk JWTs."""
+    v = os.environ.get("CLERK_AUDIENCE", "").strip()
+    return v or None
+
+
 # --- RAG / LLM (enterprise: all secrets and endpoints from env) ---
 
 
@@ -90,7 +129,7 @@ def pinecone_index_host() -> str | None:
 
 def pinecone_index_name() -> str | None:
     """Legacy / name-only index handle (used when host is not set)."""
-    v = os.environ.get("PINECONE_INDEX_NAME", "").strip()
+    v = os.environ.get("PINECONE_INDEX_NAME", "ai-knowledge-assistant").strip()
     return v or None
 
 
