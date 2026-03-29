@@ -1,5 +1,9 @@
 # Clerk setup
 
+Status:
+- Active path: Clerk-hosted auth for local and production sign-in.
+- TODO option: Keep "Enterprise Login Center" as a future UX wrapper on top of Clerk rather than a separate auth implementation for now.
+
 1. Create an application in the [Clerk dashboard](https://dashboard.clerk.com).
 2. Add sign-in methods and (if using orgs) organization features.
 3. Copy **publishable** and **secret** keys into the host environment (never commit).

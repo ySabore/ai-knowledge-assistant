@@ -69,14 +69,14 @@ Open `http://127.0.0.1:5173`.
 
 ## 5) Authenticate from frontend
 
-The recovery UI now supports setting the bearer token in-page.
+The React app now uses the active Clerk session directly when testing authenticated API access.
 
-- Keep `dev-local-token` for `AUTH_MODE=dev`.
-- For `AUTH_MODE=clerk`, paste a valid Clerk JWT into the token field and click **Apply**.
-
-This lets you validate React + Clerk-backed API auth without adding Clerk SDK coupling into the recovered UI yet.
+- Sign in through `http://127.0.0.1:5173/sign-in`.
+- Open `http://127.0.0.1:5173/app`.
+- The app will call `/api/health` and `/api/me/organizations` using a Clerk token from the current session.
+- If you need a custom JWT template, set `VITE_CLERK_JWT_TEMPLATE` in `apps/web/.env`.
 
 ## Current TODOs
 
 - Railway + Postgres deployment path (deferred for now).
-- Full native Clerk frontend SDK integration (session management, sign-in UI, token refresh).
+- Enterprise Login Center as an optional future UX wrapper over Clerk.

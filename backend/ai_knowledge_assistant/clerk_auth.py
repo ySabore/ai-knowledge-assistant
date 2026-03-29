@@ -40,7 +40,7 @@ def verify_clerk_jwt(token: str) -> ClerkIdentity:
     try:
         claims = jwt.decode(token, **decode_kwargs)
     except InvalidTokenError as exc:
-        raise ValueError("Invalid Clerk JWT") from exc
+        raise ValueError(f"Invalid Clerk JWT: {exc}") from exc
 
     subject = str(claims.get("sub", "")).strip()
     if not subject:

@@ -719,19 +719,19 @@ footer{padding:60px 5% 32px;border-top:1px solid var(--bd)}
     <div class="auth-head">
       <div>
         <h2 class="auth-title">Enterprise Login Center</h2>
-        <p class="auth-sub">Choose your organization's preferred sign-in method. This mock flow includes SSO/SAML, SCIM provisioning readiness, MFA enforcement, and step-up security for privileged actions.</p>
+        <p class="auth-sub">Sign in with your work email or GitHub account through Clerk. Your organization can still enable SSO, SAML, and tighter access policies behind the same secure login flow.</p>
       </div>
       <button class="btn-ghost" data-action="close-auth">Close</button>
     </div>
     <div class="auth-grid">
-      <button class="auth-option active" data-login="sso"><h4>SSO (SAML/OIDC)</h4><p>Okta, Azure AD, Google Workspace, Ping Identity.</p></button>
-      <button class="auth-option" data-login="passkey"><h4>Passkey + Device Trust</h4><p>WebAuthn with managed device checks and geo policy.</p></button>
-      <button class="auth-option" data-login="oauth"><h4>OAuth for Contractors</h4><p>Scoped access + expiring sessions for external partners.</p></button>
-      <button class="auth-option" data-login="breakglass"><h4>Break-glass Admin Login</h4><p>Restricted emergency account with mandatory MFA audit trail.</p></button>
+      <button class="auth-option active" data-login="email"><h4>Continue with Email</h4><p>Passwordless or password-based sign-in through Clerk hosted auth.</p></button>
+      <button class="auth-option" data-login="github"><h4>Continue with GitHub</h4><p>Use your GitHub account when GitHub OAuth is enabled in Clerk.</p></button>
+      <button class="auth-option" data-login="sso"><h4>Enterprise SSO / SAML</h4><p>Okta, Azure AD, Google Workspace, and identity-provider based sign-on.</p></button>
+      <button class="auth-option" data-login="invite"><h4>Invited Workspace Access</h4><p>Clerk-managed organization membership and invite acceptance flow.</p></button>
     </div>
     <div class="auth-actions">
-      <div class="auth-meta">Security posture: <strong style="color:var(--t1)">MFA enforced</strong> · <strong style="color:var(--t1)">IP allowlist enabled</strong> · <strong style="color:var(--t1)">Session recording active</strong></div>
-      <button class="btn-hero" id="completeLogin">Authenticate & Open Dashboard →</button>
+      <div class="auth-meta">Powered by <strong style="color:var(--t1)">Clerk</strong> · <strong style="color:var(--t1)">Email + GitHub sign-in</strong> · <strong style="color:var(--t1)">Organization-aware access</strong></div>
+      <button class="btn-hero" id="completeLogin">Continue to Secure Sign In →</button>
     </div>
   </div>
 </section>
@@ -814,6 +814,9 @@ document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe
 
 const authModal = document.getElementById('authModal');
 const dashboardShell = document.getElementById('dashboardShell');
+const goToClerkSignIn = () => {
+  window.top.location.href = '/sign-in';
+};
 
 document.querySelectorAll('[data-action="open-auth"]').forEach(btn => {
   btn.addEventListener('click', () => authModal.classList.add('active'));
@@ -823,8 +826,7 @@ document.querySelector('[data-action="close-auth"]').addEventListener('click', (
 });
 document.getElementById('completeLogin').addEventListener('click', () => {
   authModal.classList.remove('active');
-  dashboardShell.classList.add('active');
-  dashboardShell.scrollIntoView({ behavior: 'smooth' });
+  goToClerkSignIn();
 });
 document.querySelector('[data-action="logout"]').addEventListener('click', () => {
   dashboardShell.classList.remove('active');

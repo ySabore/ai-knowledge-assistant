@@ -5,7 +5,7 @@ import logging
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from . import admin, chat, config, documents, health, ingest, me
+from . import admin, chat, config, documents, health, ingest, me, organizations
 from .middleware.request_context import RequestContextMiddleware
 from .startup import lifespan, load_env_files
 
@@ -25,6 +25,7 @@ app.add_middleware(
 app.add_middleware(RequestContextMiddleware)
 
 app.include_router(me.router, prefix="/me", tags=["me"])
+app.include_router(organizations.router, prefix="/organizations", tags=["organizations"])
 app.include_router(admin.router, prefix="/admin", tags=["admin"])
 app.include_router(documents.router, prefix="/workspaces", tags=["documents"])
 app.include_router(chat.router, prefix="/workspaces", tags=["chat"])

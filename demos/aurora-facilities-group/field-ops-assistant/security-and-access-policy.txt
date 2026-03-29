@@ -1,24 +1,36 @@
-0\r�m��=�+j
-https://apps.microsoft.com/assets/js/css-function-DmSxojfK.jsimport{g as i,b as n}from"./if-defined-QQ5jrQ9m.js";function o(r,e=""){const t=`filter: ${r}; transform: ${e} translate3d(0, 0, 0);`;return i(t)}function $(r,e,t,a,l){let s=`calc((${r} - ${e} * (${t} - 1)) / ${t})`;return a&&(s=`max(${s}, ${a})`),i(s)}function c(){return n`:dir(rtl) &`}export{o as f,$ as r,c as s};
-�A
-�Eo��:D��
+Aurora Facilities Group
+Security and Access Policy
 
-GET�	�"
+Purpose
+This policy defines minimum security practices for Aurora personnel who handle building access, temporary badges, escort procedures, and security-sensitive operational information.
 
-accept-rangesbytes"2
+Access control rules
+- Employees may only use credentials assigned to them personally.
+- Badge sharing is prohibited.
+- Technicians must not tailgate through secured doors unless site security has approved escorted entry.
+- Access to data centers, executive suites, pharmacy storage, records rooms, and alarm panels is limited to explicitly authorized personnel.
 
-cache-control!public,max-age=31536000,immutable"
-content-length317"�
-content-security-policy�default-src 'self' data:;script-src 'self' https://*.clarity.ms https://c.bing.com wcpstatic.microsoft.com js.monitor.azure.com www.microsoft.com get.microsoft.com xvsec.video.microsoft.com bat.bing.com 'unsafe-inline';style-src * 'unsafe-inline';connect-src * data: ms-windows-store:;font-src *;img-src * data: blob:;media-src 'self' blob: https://sfds-production.azurefd.net https://canvasstorageprodtorus.blob.core.windows.net https://cdn-dynmedia-1.microsoft.com https://malibussl-s.akamaihd.net;frame-src * ms-windows-store:;report-uri https://csp.microsoft.com/report/app-store-web-prod"
+Visitor and vendor escorting
+- Unbadged vendors and visitors must follow customer escort requirements.
+- Escort responsibility remains with the Aurora employee until the visitor is handed off to an approved site contact.
+- Visitors may not be left unattended in restricted zones.
 
-content-typetext/javascript"%
-date
-Fri, 27 Mar 2026 15:34:41 GMT"
-etag"1dcbd5f75319b3d"".
+Alarm and code handling
+- Alarm codes, key safe combinations, and lockbox instructions must only be shared through approved channels.
+- Codes may not be sent by personal text message.
+- Written copies of alarm instructions must be stored in approved systems only.
 
-last-modified
-Thu, 26 Mar 2026 20:31:00 GMT"
-ms-cvyu1sBsEf+0KIxUs4.0"
-permissions-policy	unload=()"P
+Incident handling
+- Suspicious behavior, forced entry, missing keys, or unauthorized access attempts must be escalated immediately.
+- Security incidents should be documented with time, location, involved parties, and the immediate containment action.
+- Aurora employees should not physically intervene unless there is an immediate life safety requirement and they are trained to do so.
 
-x-azure-refA20260327T153441Z-r1f8f7cb
+Device and record security
+- Site photos, badge logs, and access incident notes must remain in company-managed systems.
+- Lost or stolen devices with customer information must be reported to IT within one hour.
+- Customer floorplans and camera screenshots may only be shared with authorized customer contacts.
+
+After-hours building entry
+- After-hours entry requires active ticket documentation or supervisor approval.
+- Technicians must verify that the visit purpose matches the dispatch notes before entering restricted spaces.
+- If the listed site contact cannot be reached for a questionable after-hours request, the technician must pause entry and call the on-call manager.

@@ -1,22 +1,15 @@
-import { Link, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import { Navigate, Route, Routes } from "react-router-dom";
+import AppPage from "./pages/AppPage";
+import LandingPageFrame from "./pages/LandingPageFrame";
+import SignInPage from "./pages/SignInPage";
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <header className="border-b border-slate-700 bg-slate-900/80 px-4 py-3">
-        <nav className="mx-auto flex max-w-3xl items-center gap-4">
-          <Link to="/" className="font-semibold text-teal-400">
-            AI Knowledge Assistant
-          </Link>
-          <span className="text-xs text-slate-500">recovery UI</span>
-        </nav>
-      </header>
-      <main className="mx-auto max-w-3xl px-4 py-8">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-        </Routes>
-      </main>
-    </div>
+    <Routes>
+      <Route path="/" element={<LandingPageFrame />} />
+      <Route path="/sign-in/*" element={<SignInPage />} />
+      <Route path="/app/*" element={<AppPage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }

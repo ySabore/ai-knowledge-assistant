@@ -1,1 +1,41 @@
-0\r�m��:�i�(https://apps.microsoft.com/assets/js/constants-DjGdUBZV.jsimport{m as h}from"./telemetry-service-fmYdSCsJ.js";class e{static get PSIDownloadUrl(){return h().overwrittenPSIDownloadUrl??"https://get.microsoft.com/installer/download/"}static{this.InstallPackDownloadUrl="https://get.microsoft.com/installer/packdownload"}static{this.StoreProtocol="ms-windows-store://"}static{this.StorePdpUrl="ms-windows-store://pdp"}static{this.EditorialUrl="ms-windows-store://editorial"}static{this.CollectionUrl="ms-windows-store://collection"}static{this.BrowseUrl="ms-windows-store://browse"}static{this.NavigateToPageUrl="ms-windows-store://navigatetopage"}static{this.StoreSearchUrl="ms-windows-store://search"}static{this.StorePublisherUrl="ms-windows-store://publisher"}static{this.ReportAppProductGroup="store-web"}static{this.DefaultKeywords=["Microsoft","Microsoft Store","applications"]}static{this.SupportedImageResolutions=[{width:34,height:34},{width:38,height:38},{width:40,height:40,active:!0},{width:43,height:64},{width:44,height:44},{width:46,height:60},{width:46,height:63},{width:50,height:50},{width:50,height:69},{width:52,height:52,active:!0},{width:56,height:56},{width:60,height:40},{width:60,height:45},{width:60,height:60,active:!0},{width:60,height:90},{width:64,height:48},{width:64,height:64},{width:68,height:38},{width:71,height:100},{width:72,height:72},{width:75,height:75,active:!0},{width:80,height:60},{width:84,height:56},{width:84,height:84},{width:85,height:85},{width:85,height:120},{width:86,height:86},{width:95,height:95,active:!0},{width:99,height:99},{width:99,height:135},{width:100
+Aurora Facilities Group
+Field Operations Playbook
+Revision: February 2026
+
+Shift start checklist
+1. Review assigned tickets, active incidents, and on-call notes.
+2. Confirm site address, access instructions, parking details, and customer point of contact.
+3. Verify tools, PPE, replacement supplies, and any required permits or escort notes.
+4. Check whether the site has restricted zones, after-hours badge procedures, or loading dock timing rules.
+
+Dispatch expectations
+- Dispatch creates or updates every service ticket before a technician arrives on site.
+- Field technicians must acknowledge dispatch contact before travel begins.
+- If a technician cannot make the estimated arrival time, dispatch must be updated immediately so the customer can be notified.
+
+On-site arrival protocol
+- Sign in according to the customer building rules.
+- Introduce yourself to the site contact or security desk.
+- Confirm the exact issue location and whether there are occupant safety or access concerns.
+- Take a quick condition snapshot before work begins when the issue involves leaks, damage, blocked access, or repeat failures.
+
+Priority 1 response
+- Stabilize the area first.
+- Protect occupants and property before attempting a full repair.
+- Escalate to the on-call manager if life safety, building evacuation, or major service interruption is involved.
+- Create updates every 30 minutes until the issue is stabilized.
+
+Badge and key handling
+- Keys may never be left unattended in carts, vehicles, or unsecured offices.
+- Temporary badges must be returned before leaving the site unless the site lead authorizes overnight hold procedures.
+- Lost keys, badges, or access cards must be reported immediately to dispatch and security leadership.
+
+Vendor coordination
+- External vendors must sign in and be escorted where customer rules require it.
+- Aurora remains responsible for customer communication even when a third-party vendor performs the repair.
+- Vendor arrival delays longer than 30 minutes should be relayed to the customer contact.
+
+Closure standards
+- Close tickets with the action taken, materials used, remaining risk, and follow-up owner.
+- If the issue is only partially resolved, document the temporary mitigation clearly.
+- Photos should be attached for leaks, damage, blocked access, and visible repair completion when permitted by the customer.

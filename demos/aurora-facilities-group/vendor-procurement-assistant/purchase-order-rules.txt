@@ -1,59 +1,39 @@
-lumU�3�dP��g�aQ�	 F�
-l�
-s�%��APttt_tf�tt��0tt�tty�?:\�jo�fVe a�ujb�d�
-aQ�2b�e �e�`3`�e`�v�9��H �r`d os`��?ti��e����K�9?tC �\e.s�����\���U�9�9��\���g�1�?:�?:\���\ ڿ轿�0`U����tp.�\�yo0na,_�[�O
-�m[t:\:2�:6�
-c�2�s��a95p3�::?t?t:�
-?t�
-o�	_�ppQK_�s.�
-�_�_�_��
-::W�
-�c�_��?_�a��_��_�?tY�:1?t2�_��ap
-_�_�_�_����
+Aurora Facilities Group
+Purchase Order Rules
 
-��7
+Scope
+These rules apply to Aurora employees who request supplies, tools, subcontractor labor, uniform replacements, and emergency materials through the procurement process.
 
-�
+Approval thresholds
+- Up to $500: site lead or department manager approval
+- $501 to $2,500: department manager plus procurement approval
+- $2,501 to $10,000: procurement manager plus finance approval
+- Above $10,000: finance director and operations vice president approval
 
+Emergency purchases
+- Emergency purchases are allowed only when delaying purchase would create a safety issue, major customer disruption, or significant property damage risk.
+- The requester must document why standard approval timing could not be followed.
+- Emergency purchases still require next-business-day review by procurement.
 
+Required PO details
+- business justification
+- customer site or cost center
+- vendor name
+- itemized quantity and pricing
+- delivery location
+- requested delivery date
+- requester name and approver
 
+Restricted purchasing
+- Personal purchases may never be placed on Aurora accounts.
+- Gift cards, cash equivalents, and non-approved software subscriptions require finance preapproval regardless of amount.
+- Purchases from new vendors may not proceed until procurement confirms onboarding requirements are complete.
 
-�
+Receiving and reconciliation
+- The receiving employee must verify quantity and visible condition within one business day of delivery.
+- Missing, damaged, or substituted items must be reported to procurement immediately.
+- Invoices must match the approved purchase order before payment release.
 
-[��?W�t
-
-
-2���
-a
-�0
-
-
-�
-
-
-
-
-
-�˟���˟�
-_t_�W�?Ws���Q�_te0�5��U���
-
-3
-?:��A���rpem0�_W_W_W��o��e��e���-��
-
-
-
-
-
-�
-_t_teP/_WYW_tEUtf4409U0�fP�6�4��3
-�tc2�Q�Y�PROCES: \Devic8\H ardiskVo�lumt3��P:og
-a&� Frl6s�(x86�)NM�rzs�ft&E�g+�\Apl#�ai#n!ms*e%.)x
- 
-206�-327o�0m:3:(7,D�L�T�A�K ZPsT݁yC�\TU�5r�\�sin�jy�7sh��Kw�F�RD��t��\L�Rc�l�
-ۛo�- ���oa���Zf�
-u����C�c��5e�
-��d_�X�a��h�B_�
-_�mb0�\f��0�1�4�w��ttYt\t}t5t���d�`aRtet�tttto�gk�t�\�q\`l �t�u�at6?:`}���������!y?:?:?:?:?:?:���?:���̿���a��軒�tt �d8q2�CetRpsC
-ts�plk�stS
-
-t}��?:�{top9eP~�WTj�f
+Subcontractor labor
+- Scope of work, schedule, insurance status, and site access requirements must be documented before the subcontractor arrives on site.
+- Any field-requested change order must be approved before the subcontractor performs out-of-scope work unless emergency conditions apply.
