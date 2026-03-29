@@ -1,1 +1,34 @@
-ace cairo_pattern_get_type cairo_pattern_set_extend cairo_pattern_set_filter cairo_pattern_set_matrix cairo_pattern_status cairo_pattern_type_linear cairo_pattern_type_radial cairo_pattern_type_solid cairo_pattern_type_surface cairo_pdf_surface_create cairo_pdf_surface_set_size cairo_ps_get_levels cairo_ps_level_2 cairo_ps_level_3 cairo_ps_level_to_string cairo_ps_surface_create cairo_ps_surface_dsc_begin_page_setup cairo_ps_surface_dsc_begin_setup cairo_ps_surface_dsc_comment cairo_ps_surface_get_eps cairo_ps_surface_restrict_to_level cairo_ps_surface_set_eps cairo_ps_surface_set_size cairo_scaled_font_create cairo_scaled_font_extents cairo_scaled_font_get_ctm cairo_scaled_font_get_font_face cairo_scaled_font_get_font_matrix cairo_scaled_font_get_font_options cairo_scaled_font_get_scale_matrix cairo_scaled_font_get_type cairo_scaled_font_glyph_extents cairo_scaled_font_status cairo_scaled_font_text_extents cairo_status_clip_not_representable cairo_status_file_not_found cairo_status_invalid_content cairo_status_invalid_dash cairo_status_invalid_dsc_comment cairo_status_invalid_format cairo_status_invalid_index cairo_status_invalid_matrix cairo_status_invalid_path_data cairo_status_invalid_pop_group cairo_status_invalid_restore cairo_status_invalid_status cairo_status_invalid_stride cairo_status_invalid_string cairo_status_invalid_visual cairo_status_no_current_point cairo_status_no_memory cairo_status_null_pointer cairo_status_pattern_type_mismatch cairo_status_read_error cairo_status_success cairo_status_surface_finished cairo_status_surface_type_mismatch cairo_status_temp_file_error cairo_status_write_error cairo_subpixel_order_bgr cairo_subpixel_order_default cairo_subpixel_order_
+Aurora Facilities Group
+Company Profile
+
+Overview
+Aurora Facilities Group is a regional facilities services provider that supports office towers, mixed-use campuses, healthcare administration buildings, and light industrial properties. Aurora combines on-site field teams with centralized dispatch, vendor coordination, and account management.
+
+Service lines
+- Day porter and janitorial coordination
+- Building access support and after-hours unlock response
+- Preventive maintenance coordination
+- Minor repair dispatch
+- Vendor escorting and site readiness checks
+- Incident response and building status reporting
+
+Operating model
+- Every customer site is assigned an account manager and a site lead.
+- After-hours issues route to the central dispatch desk first.
+- Field technicians are dispatched based on skill set, location, customer priority tier, and badge eligibility.
+- Major incidents require both operational response and customer communication updates.
+
+Priority tiers
+- Priority 1: life safety, active water leaks, power loss in critical areas, building access failure at occupied sites
+- Priority 2: HVAC disruption in occupied areas, restroom outages, loading dock access issues, alarm coordination
+- Priority 3: non-urgent repairs, cosmetic issues, routine supply requests, scheduled follow-up work
+
+Escalation expectations
+- Priority 1 incidents must be acknowledged immediately and escalated to the on-call manager within 10 minutes.
+- Priority 2 incidents must be acknowledged within 30 minutes.
+- Customer-visible disruptions require status updates until resolution or formal handoff.
+
+Customer communication
+- Site teams should use clear, factual language and avoid speculative root-cause statements.
+- When resolution timing is uncertain, technicians should share the next checkpoint time rather than guessing an ETA.
+- Sensitive security details should only be communicated to approved customer contacts.

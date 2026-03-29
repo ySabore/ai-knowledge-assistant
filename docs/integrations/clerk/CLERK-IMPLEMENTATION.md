@@ -1,5 +1,9 @@
 # Clerk implementation notes
 
+Status:
+- Current implementation target: direct Clerk sign-in and Clerk JWT verification.
+- Deferred TODO: "Enterprise Login Center" remains a product/UX option we may layer on later, but it is not a separate auth track in this phase.
+
 ## Target behavior
 
 - Browser obtains Clerk session / JWT after sign-in.

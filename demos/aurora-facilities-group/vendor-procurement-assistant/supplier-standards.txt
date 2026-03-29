@@ -1,20 +1,38 @@
-security-policy�default-src 'self' data:;script-src 'self' https://*.clarity.ms https://c.bing.com wcpstatic.microsoft.com js.monitor.azure.com www.microsoft.com get.microsoft.com xvsec.video.microsoft.com bat.bing.com 'unsafe-inline';style-src * 'unsafe-inline';connect-src * data: ms-windows-store:;font-src *;img-src * data: blob:;media-src 'self' blob: https://sfds-production.azurefd.net https://canvasstorageprodtorus.blob.core.windows.net https://cdn-dynmedia-1.microsoft.com https://malibussl-s.akamaihd.net;frame-src * ms-windows-store:;report-uri https://csp.microsoft.com/report/app-store-web-prod"
+Aurora Facilities Group
+Supplier Standards
 
-content-typetext/javascript"%
-date
-Fri, 27 Mar 2026 15:34:42 GMT"
-etagW/"1dcbd5f7531951f"".
+Purpose
+Aurora uses these standards to evaluate vendors that provide facility supplies, specialty trades, access hardware, uniforms, safety equipment, and emergency response support.
 
-last-modified
-Thu, 26 Mar 2026 20:31:00 GMT"
-ms-cvSBRsSowK30WL9Jg/.0"
-permissions-policy	unload=()"@
-strict-transport-security#max-age=31536000; includeSubDomains"
-varyAccept-Encoding"P
+Baseline requirements
+- valid business registration
+- tax documentation on file
+- certificate of insurance meeting contract minimums
+- agreement to Aurora code of conduct and confidentiality expectations
+- ability to meet invoicing and service documentation requirements
 
-x-azure-refA20260327T153442Z-r1f8f7cb664w62ddhC1BL1sdxn0000000ey000000000b7tp"
-x-cacheTCP_HIT"!
-x-content-type-optionsnosniff"!
-x-fd-int-roxy-purgeid66820371"
+Operational expectations
+- Vendors must arrive during the approved service window unless dispatch authorizes an exception.
+- Vendors must follow customer sign-in, escort, badge, and safety rules.
+- Technicians and drivers must present themselves professionally and avoid discussing unrelated customer issues on site.
+- Vendors are expected to notify Aurora immediately if they cannot meet a committed arrival window.
 
-x-powered-byASP.NET0��
+Performance standards
+- on-time arrival target: 95 percent
+- service completion documentation submitted within one business day
+- invoice accuracy target: 98 percent
+- safety incident rate reviewed quarterly
+
+Disqualifiers
+- repeated missed appointments without notice
+- falsified service records
+- failure to maintain insurance
+- unsafe on-site conduct
+- unauthorized subcontracting
+
+Preferred supplier signals
+- strong geographic coverage
+- responsive dispatch communication
+- clear field documentation
+- consistent pricing
+- proven performance on occupied and security-sensitive sites

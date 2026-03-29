@@ -18,7 +18,6 @@ def list_workspaces(
     organization_id: str = Query(..., alias="organizationId"),
     user_id: str = Depends(current_user_id),
 ):
-    orgs = {o["organization_id"] for o in registry.user_organizations(user_id)}
-    if organization_id not in orgs:
+    if not registry.user_org_role(user_id, organization_id):
         return {"workspaces": []}
-    return {"workspaces": registry.org_workspaces(organization_id)}
+    return {"workspaces": registry.user_workspaces(user_id, organization_id)}

@@ -17,11 +17,11 @@ _scheme = HTTPBearer(auto_error=False)
 async def current_user_id(
     creds: HTTPAuthorizationCredentials | None = Depends(_scheme),
 ) -> str:
+    mode = config.auth_mode()
     fixed = config.dev_user_id()
-    if fixed:
+    if mode == "dev" and fixed:
         return fixed
 
-    mode = config.auth_mode()
     if creds is None or creds.scheme.lower() != "bearer":
         raise HTTPException(status_code=401, detail="Missing bearer token")
     if mode == "clerk":

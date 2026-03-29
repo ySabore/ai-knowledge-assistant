@@ -161,11 +161,26 @@ def ingest_poll_interval_seconds() -> float:
     return max(1.0, float(os.environ.get("INGEST_POLL_INTERVAL_SECONDS", "5")))
 
 
+def ingest_spool_dir() -> Path:
+    raw = os.environ.get("INGEST_SPOOL_DIR", "").strip()
+    if raw:
+        return Path(raw).expanduser().resolve()
+    return (PROJECT_ROOT / ".ingestion_spool").resolve()
+
+
 def ingest_allowed_roots() -> list[Path]:
     raw = os.environ.get("INGEST_ALLOWED_PATHS", "").strip()
     if raw:
         return [Path(p.strip()).expanduser().resolve() for p in raw.split(",") if p.strip()]
-    return [(PROJECT_ROOT / "demos").resolve()]
+    return [(PROJECT_ROOT / "demos").resolve(), ingest_spool_dir()]
+
+
+def max_file_size_mb() -> int:
+    return max(1, int(os.environ.get("MAX_FILE_SIZE_MB", "10")))
+
+
+def max_file_size_bytes() -> int:
+    return max_file_size_mb() * 1024 * 1024
 
 
 def metadata_text_max_chars() -> int:
